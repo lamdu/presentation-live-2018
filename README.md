@@ -10,9 +10,51 @@ The gist of the problem is that Lamdu is a big and novel project with many aspec
 
 Options for the main idea to present -
 
-### Improvement upon IDEs
+### Dynamic languages, static languages, and the best of both worlds
 
-#### Preface
+Some programmers choose dynamic programming languages, along with their interactive REPLs which provide programmers with useful feedback.
+
+Some prefer static programming langauges for the essential feedback from their type systems.
+
+Others conclude with "just pick the best tool for the job", with the common notion being that dynamic languages are often a better fit for smaller programs and experimentation, while static languages are a better fit for larger programs.
+
+Can a programming language to offer the best of both worlds?
+
+#### Current state of REPLs for static languages
+
+There are environments that provide REPLs for static languages, such as Apple's Swift Playgrounds, ghci, and others.
+
+In these environments, the REPL is to some extent a second class citizen to the type system - a module containing a type error in any function or dependency cannot be imported and tested in the REPL at all.
+
+In essence there's a sort of modality for the different forms of computer feedback:
+
+* To enjoy the REPL (or live-reloading), first fix all the type errors
+* To get type errors, make sure that there are no name errors
+* To get the name errors, fix all syntax errors in the code
+
+#### Is there a better way to combine REPLs and type systems
+
+**Goal**: To provide all possible forms of feedback at all times
+
+Type information should be available at all times, (undisturbed by syntax or name errors), and evaluation should be available wherever possible. A type mismatch should not affect the ability to evaluate unrelated code paths.
+
+First we'll demonstrate the experience and then we'll expand further on what makes it work.
+
+#### Demonstrate Lamdu
+
+**TODO**: Demonstrate type mismatches and blame assignment in and across definitions (which serve as membranes for typing propagation)
+
+#### How it works
+
+Lamdu's approach for syntax errors is quite radical - eliminate them. To achieve this, one must detach from the prevalent notion that code is stored as text files, and opt for Projectional programming.
+
+"Projectional" means that the program is stored as a data structure in memory, which the IDE "projects" into a human-friendly interface.
+
+One big advantage of the textual interface for programming is that it is intuitive and natural to learn and use - you just type the letters symbols for the program you want to see and it appears on screen. We call this WYTIWYS (what you type is what you see). A common caveat of projectional editors is lacking this intuitive interface, but there's no essential contradiction. Lamdu's interface is WYTIWYS.
+
+**TODO**: Complete
+
+### Improvement upon IDEs
 
 Modern programming has become a cooperation between the programmer and the computer, with the computer providing useful feedback in multiple communication channels, specifically:
 
