@@ -8,15 +8,39 @@ The gist of the problem is that Lamdu is a big and novel project with many aspec
 
 ## Topics/Storylines
 
-Options for the main idea to present -
+Options for the main idea to present (many are similar but with different emphasis) -
+
+### Bridging the gap between the REPL and "real programming"
+
+Many programmers love the REPL (aka Interactive Shell, Notebook, Playgrounds).
+It provides useful feedback, validation, and actual results.
+
+But the REPL somewhat loses its efficacy when writing larger programs, to the point that many "serious" programming languages such Java and C++ didn't even bother creating one.
+
+How exactly does the REPL become less effective for large programs?
+Let's illustrate this with an example.
+
+Imagine being in the middle writing a new function in one of your modules,
+and you happen to want the assistance of the repl for what you're currently writing.
+The following process happens:
+
+* You press the key to invoke the repl with your module loaded
+* Computer: I can't load your module because it contains a syntax error here in your new function
+* You fix the syntax error and invoke the repl again
+* Computer: I can't load your module because it has a name error (I can attempt name resolution now that I understand the syntax)
+* You fix the name error and invoke the repl again
+* Computer: I can't load your module because it has type errors (now that I understand the syntax and resolved the names I can do type-checking)
+* You fix the type errors and invoke the repl again
+* Computer: Module loaded successfully. What do you want to do now?
+* You: I forgot :/
 
 ### Dynamic languages, static languages, and the best of both worlds
 
 Some programmers choose dynamic programming languages, along with their interactive REPLs which provide programmers with useful feedback.
 
-Some prefer static programming langauges for the essential feedback from their type systems.
+Some prefer static programming langauges for the essential feedback their type systems provide.
 
-Others conclude with "just pick the best tool for the job", with the common notion being that dynamic languages are often a better fit for smaller programs and experimentation, while static languages are a better fit for larger programs.
+Others suggest to "just use the right tool for the job", with the common notion being that dynamic languages are often a better fit for smaller programs and experimentation, while static languages are a better fit for larger programs.
 
 Can a programming language to offer the best of both worlds?
 
@@ -65,7 +89,6 @@ Modern programming has become a cooperation between the programmer and the compu
 
 These are very useful, but unfortunately only work intermittently:
 
-* When there are syntax errors the compiler cannot understand the program. No feedback at these states
 * None of the code will run when even a single part of it does not type-check
 * Type errors are often over-complicated
 
