@@ -15,7 +15,7 @@ Options for the main idea to present (many are similar but with different emphas
 Many programmers love the REPL (aka Interactive Shell, Notebook, Playgrounds).
 It provides useful feedback, validation, and actual results.
 
-But the REPL somewhat loses its efficacy when writing larger programs, to the point that many "serious" programming languages such Java and C++ didn't even bother creating one.
+But the REPL somewhat loses its efficacy when writing larger programs, to the point that many "serious" programming languages such Java, Rust, and C++ didn't even bother creating one.
 
 How exactly does the REPL become less effective for large programs?
 Let's illustrate this with an example.
