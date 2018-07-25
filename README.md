@@ -10,98 +10,56 @@ The gist of the problem is that Lamdu is a big and novel project with many aspec
 
 Options for the main idea to present (many are similar but with different emphasis) -
 
-### Bridging the gap between the REPL and "real programming"
+### Scaling the REPL experience
 
 Many programmers love the REPL (aka Interactive Shell, Notebook, Playgrounds).
-It provides useful feedback, validation, and actual results.
 
-But the REPL somewhat loses its efficacy when writing larger programs, to the point that many "serious" programming languages such Java, Rust, and C++ didn't even bother creating one.
+It provides validation, useful feedback, it's very useful for learning to code, and in some cases it even produces the actual program results (obviating the need to build a full application).
+
+But the REPL often loses its efficacy when writing larger programs, to the point that many "serious" programming languages such Java, Rust, and C++ don't even bother offering one.
+
+#### How the REPL loses efficacy for larger programs
 
 How exactly does the REPL become less effective for large programs?
+
+We recognize two problems:
+
+* Availability
+* Bandwidth
+
+##### Availability
+
 Let's illustrate this with an example.
 
 Imagine being in the middle writing a new function in one of your modules,
-and you happen to want the assistance of the repl for what you're currently writing.
-The following process happens:
+and you happen to want the check something in the repl for what you're currently writing. The following often happens:
 
 * You press the key to invoke the repl with your module loaded
 * Computer: I can't load your module because it contains a syntax error here in your new function
 * You fix the syntax error and invoke the repl again
-* Computer: I can't load your module because it has a name error (I can attempt name resolution now that I understand the syntax)
+* Computer: I understand your syntax, and I now see that you made a name error
 * You fix the name error and invoke the repl again
-* Computer: I can't load your module because it has type errors (now that I understand the syntax and resolved the names I can do type-checking)
+* Computer: Now that I understand what you were referencing, I can see that your types don't match.
 * You fix the type errors and invoke the repl again
-* Computer: Module loaded successfully. What do you want to do now?
+* Computer: Module loaded successfully. Your wish is my command! What do you want to do now?
 * You: I forgot :/
 
-### Dynamic languages, static languages, and the best of both worlds
+##### Bandwidth
 
-Some programmers choose dynamic programming languages, along with their interactive REPLs which provide programmers with useful feedback.
+The other problem with REPLs is that the output size is not proportional to the size of your program.
 
-Some prefer static programming langauges for the essential feedback their type systems provide.
+Programmers who wish to get a more in-depth understanding often use clunky debuggers and debug-prints to see more about how their programs work.
 
-Others suggest to "just use the right tool for the job", with the common notion being that dynamic languages are often a better fit for smaller programs and experimentation, while static languages are a better fit for larger programs.
+### The REPL in Lamdu
 
-Can a programming language to offer the best of both worlds?
+Now let's see how it works in Lamdu:
 
-#### Current state of REPLs for static languages
-
-There are environments that provide REPLs for static languages, such as Apple's Swift Playgrounds, ghci, and others.
-
-In these environments, the REPL is to some extent a second class citizen to the type system - a module containing a type error in any function or dependency cannot be imported and tested in the REPL at all.
-
-In essence there's a sort of modality for the different forms of computer feedback:
-
-* To enjoy the REPL (or live-reloading), first fix all the type errors
-* To get type errors, make sure that there are no name errors
-* To get the name errors, fix all syntax errors in the code
-
-#### Is there a better way to combine REPLs and type systems
-
-**Goal**: To provide all possible forms of feedback at all times
-
-Type information should be available at all times, (undisturbed by syntax or name errors), and evaluation should be available wherever possible. A type mismatch should not affect the ability to evaluate unrelated code paths.
-
-First we'll demonstrate the experience and then we'll expand further on what makes it work.
-
-#### Demonstrate Lamdu
-
-**TODO**: Demonstrate type mismatches and blame assignment in and across definitions (which serve as membranes for typing propagation)
-
-#### How it works
-
-Lamdu's approach for syntax errors is quite radical - eliminate them. To achieve this, one must detach from the prevalent notion that code is stored as text files, and opt for Projectional programming.
-
-"Projectional" means that the program is stored as a data structure in memory, which the IDE "projects" into a human-friendly interface.
-
-One big advantage of the textual interface for programming is that it is intuitive and natural to learn and use - you just type the letters symbols for the program you want to see and it appears on screen. We call this WYTIWYS (what you type is what you see). A common caveat of projectional editors is lacking this intuitive interface, but there's no essential contradiction. Lamdu's interface is WYTIWYS.
-
-**TODO**: Complete
-
-### Improvement upon IDEs
-
-Modern programming has become a cooperation between the programmer and the computer, with the computer providing useful feedback in multiple communication channels, specifically:
-
-* REPL and live-reloading
-* Type-checking
-
-#### Problem
-
-These are very useful, but unfortunately only work intermittently:
-
-* None of the code will run when even a single part of it does not type-check
-* Type errors are often over-complicated
-
-**Goal**: To provide immediate and useful feedback at all times
-
-#### Solution
-
-How do we intend to tackle this goal? Formalize the intermediate and incomplete states of editing a program.
-
-* Feedback should work reliably even when the program is incomplete
-* The model should allow for editing naturally as programmers currently do
-
-For this we have to depart from freely editing text. At first glance this might seem like a big problem, as text editing is a very intuitive and easily learnable interface. It turns out that the [full freedom of text](#Textual-freedom-taken-to-the-absurd) is not necessary, and we can create a text-like WYTIWYS interface that feels very natural.
+* Video shows programmer in middle of programming `factorial`
+* On the else branch, the programmer typed a string - "Potato". This is a type error as a number is expected.
+* The programmer can still go and experiment in the repl. `2*3` - 6
+* The programmer types `factorial 0` in the REPL and it works, even though `factorial` contains a type mismatch! As long as it didn't affect the evaluated path there's no problem
+* When typing `factorial 2`, evaluation does reach the type error and only then it actually blocks the evaluation.
+* Note that we don't only see the final result but we also see the intermediate values, and can navigate between different evaluated scopes too. This is our response to the bandwidth problem
 
 ## Scenes
 
