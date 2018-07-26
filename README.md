@@ -1,4 +1,4 @@
-# Presetation ideas
+# Presetation
 
 The context of presenting right now is that we intend to prepare and submit a video presentation to the [LIVE 2018 workshop](https://2018.splashcon.org/track/live-2018-papers) (deadline: 2018.08.17) and need to decide what to present.
 
@@ -6,11 +6,9 @@ The problem is that Lamdu is somewhat challenging to present. Paul Chiusano's [a
 
 The gist of the problem is that Lamdu is a big and novel project with many aspects to describe, but it's also essential to keep the presentation focused. We got to this predicament as we've focused more on coding and less on presenting our research, in contrast to academics, who typically continually update on their advances so at any given point in time there is only the recent new material to present.
 
-## Topics/Storylines
+## Script - Scaling the REPL experience
 
-Options for the main idea to present (many are similar but with different emphasis) -
-
-### Scaling the REPL experience
+See also: [Draft video](https://www.dropbox.com/s/80h3b4o9tff59i8/Lamdu%20LIVE%202018%20-%20Intro%20draft.mp4?dl=0)
 
 Many programmers love the REPL (aka Interactive Shell, Notebook, Playgrounds).
 
@@ -18,7 +16,7 @@ It provides validation, useful feedback, it's very useful for learning to code, 
 
 But the REPL often loses its efficacy when writing larger programs, to the point that many "serious" programming languages such Java, Rust, and C++ don't even bother offering one.
 
-#### How the REPL loses efficacy for larger programs
+### How the REPL loses efficacy for larger programs
 
 How exactly does the REPL become less effective for large programs?
 
@@ -27,7 +25,7 @@ We recognize two problems:
 * Availability
 * Bandwidth
 
-##### Availability
+#### Availability
 
 Let's illustrate this with an example.
 
@@ -44,7 +42,7 @@ and you happen to want the check something in the repl for what you're currently
 * Computer: Module loaded successfully. Your wish is my command! What do you want to do now?
 * You: I forgot :/
 
-##### Bandwidth
+#### Bandwidth
 
 The other problem with REPLs is that the output size is not proportional to the size of your program.
 
@@ -60,6 +58,17 @@ Now let's see how it works in Lamdu:
 * The programmer types `factorial 0` in the REPL and it works, even though `factorial` contains a type mismatch! As long as it didn't affect the evaluated path there's no problem
 * When typing `factorial 2`, evaluation does reach the type error and only then it actually blocks the evaluation.
 * Note that we don't only see the final result but we also see the intermediate values, and can navigate between different evaluated scopes too. This is our response to the bandwidth problem
+
+### How does this work - what about syntax errors
+
+Lamdu's approach to syntax errors is radical - eliminate them from existence!
+Lamdu is not a free form text editor, but rather a projectional code editor.
+This means you can't just type any text you want - you can only type syntactically valid code.
+Same goes for name errors.
+
+Wait - I can't just write any text I want?
+
+That's right, but worry not.
 
 ## Scenes
 

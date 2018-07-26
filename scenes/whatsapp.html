@@ -1,0 +1,310 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<!-- Many thanks to fakewhats.com ! See text in page for more info -->
+
+<head>
+  <meta charset="utf-8" />
+  <title>Based on fakewhats.com</title>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Architects+Daughter|Open+Sans:400,300,600,700' rel='stylesheet'
+    type='text/css'>
+  <link rel="stylesheet" href="https://www.fakewhats.com/css/app.css" />
+  <link rel="stylesheet" href="https://www.fakewhats.com/css/style.css" />
+
+  <style>
+    .hide {
+      opacity: 0;
+    }
+
+    #type-message {
+      font-size: 1.125rem;
+      padding: 0.6875rem 0 0.6875rem 3.75rem;
+      float: left;
+    }
+
+    .empty-message {
+      color: #c8c8cd;
+    }
+  </style>
+
+</head>
+
+<body style="background:red">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <p style="color:white">
+    This animation is based on the design from
+    <a href="http://fakewhats.com/">fakewhats.com</a>. As it has no options for creating and saving animations, I've edited their html to make this. Thanks
+    you very much fakewhats.com!
+  </p>
+  <div id="iphone">
+    <div class="top"></div>
+    <div class="middle">
+      <div id="screen">
+        <section id="header">
+
+          <div class="row">
+            <div class="small-6 columns">
+              <div id="connection" class="left">
+                <img src="https://www.fakewhats.com/images/iphone/3g-3.png" id="signalimage">
+              </div>
+              <div id="operator" class="left">
+                <span id="operator-result" class="result">IDE</span>
+              </div>
+              <div id="connection-type" class="left">
+                <div id="connection-type-wifi-wrapper">
+                  <img src="https://www.fakewhats.com/images/iphone/wifi-2.png" id="connection-type-wifi">
+                </div>
+              </div>
+            </div>
+
+            <div class="small-4 columns text-center">
+              <div id="clock">
+                <span id="clock-result" class="result">14:19</span>
+              </div>
+            </div>
+
+            <div id="battery-container" class="small-6 columns">
+              <div id="battery" class="right">
+                <!-- Width needs to be larger than percent number because -->
+                <!-- It probably should look relative to outer frame? -->
+                <div id="battery-percent" style="width:31%;"></div>
+              </div>
+              <div id="battery-percent-number-container" class="right">
+                <span id="battery-percent-number">26</span> %</div>
+            </div>
+          </div>
+
+          <div id="row-2">
+            <div class="row">
+              <div class="small-5 columns">
+                <div id="messages">
+                  <div class="left">
+                    <img src="https://www.fakewhats.com/images/iphone/arrow-left.png">
+                  </div>
+                  <div class="left" id="text-messages-result-container">
+                    <span id="text-messages-result" class="result"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="small-7 columns">
+                <div id="messages-name">
+                  <span id="name-result" class="result text-center">Mr. REPL</span>
+                  <span id="online-result">online</span>
+                </div>
+              </div>
+              <div class="small-4 columns">
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <section id="messages-container" style="height:560px; overflow-y:scroll;">
+          <div class="row">
+            <div class="small-16 columns">
+              <ul id="messages-list">
+
+                <li class="text-message green">
+                  <div class="bubble-top"></div>
+                  <div class="message-content">
+                    <p>
+                      Hmm, how much is 2*3?
+                    </p>
+                    <p class="timestamp">14:19
+                      <span>
+                        <img src="https://static.fakewhats.com/images/iphone/check-read.png" alt="received">
+                      </span>
+                    </p>
+                  </div>
+                  <div class="bubble-bottom"></div>
+                </li>
+
+                <li class="text-message grey">
+                  <div class="bubble-top"></div>
+                  <div class="message-content">
+                    <p>
+                      What? What do you mean? I can't even understand the syntax of that other function you wrote
+                    </p>
+                    <p class="timestamp">14:20</p>
+                  </div>
+                  <div class="bubble-bottom"></div>
+                </li>
+
+                <li class="text-message green">
+                  <div class="bubble-top"></div>
+                  <div class="message-content">
+                    <p>
+                      One moment..
+                    </p>
+                    <p class="timestamp">14:20
+                      <span>
+                        <img src="https://static.fakewhats.com/images/iphone/check-read.png" alt="received">
+                      </span>
+                    </p>
+                  </div>
+                  <div class="bubble-bottom"></div>
+                </li>
+
+                <li class="text-message green">
+                  <div class="bubble-top"></div>
+                  <div class="message-content">
+                    <p>
+                      I fixed the syntax!
+                    </p>
+                    <p class="timestamp">14:21
+                      <span>
+                        <img src="https://static.fakewhats.com/images/iphone/check-read.png" alt="received">
+                      </span>
+                    </p>
+                  </div>
+                  <div class="bubble-bottom"></div>
+                </li>
+
+                <li class="text-message grey">
+                  <div class="bubble-top"></div>
+                  <div class="message-content">
+                    <p>
+                      Yeah? What about name errors?
+                    </p>
+                    <p class="timestamp">14:22</p>
+                  </div>
+                  <div class="bubble-bottom"></div>
+                </li>
+
+                <li class="text-message green">
+                  <div class="bubble-top"></div>
+                  <div class="message-content">
+                    <p>
+                      🤦 Here, fine now?
+                    </p>
+                    <p class="timestamp">14:21
+                      <span>
+                        <img src="https://static.fakewhats.com/images/iphone/check-read.png" alt="received">
+                      </span>
+                    </p>
+                  </div>
+                  <div class="bubble-bottom"></div>
+                </li>
+
+                <li class="text-message grey">
+                  <div class="bubble-top"></div>
+                  <div class="message-content">
+                    <p>
+                      At least your code seems to make some sense now. Let me see 🧐
+                    </p>
+                    <p class="timestamp">14:22</p>
+                  </div>
+                  <div class="bubble-bottom"></div>
+                </li>
+
+                <li class="text-message grey">
+                  <div class="bubble-top"></div>
+                  <div class="message-content">
+                    <p>
+                      Your types don't match ☝️
+                    </p>
+                    <p class="timestamp">14:23</p>
+                  </div>
+                  <div class="bubble-bottom"></div>
+                </li>
+
+                <li class="text-message green">
+                  <div class="bubble-top"></div>
+                  <div class="message-content">
+                    <p>
+                      🤦🤦 Ok, how about now?
+                    </p>
+                    <p class="timestamp">14:24
+                      <span>
+                        <img src="https://static.fakewhats.com/images/iphone/check-read.png" alt="received">
+                      </span>
+                    </p>
+                  </div>
+                  <div class="bubble-bottom"></div>
+                </li>
+
+                <li class="text-message grey">
+                  <div class="bubble-top"></div>
+                  <div class="message-content">
+                    <p>
+                      Thanks for the cooperation! It really helps when someone puts the effort to ask a question properly.
+                    </p>
+                    <p>
+                      I'm happy to inform you that I performed the requested calculation on your behalf.
+                      <br> The answer to your question, "Hmm, how much is 2*3?", is:
+                      <br> 6.
+                    </p>
+                    <p class="timestamp">14:25</p>
+                  </div>
+                  <div class="bubble-bottom"></div>
+                </li>
+
+                <li class="text-message grey">
+                  <div class="bubble-top"></div>
+                  <div class="message-content">
+                    <p>
+                      Anything else I can do for you? I'm here to help 😇
+                    </p>
+                    <p class="timestamp">14:25</p>
+                  </div>
+                  <div class="bubble-bottom"></div>
+                </li>
+
+                <li class="text-message green">
+                  <div class="bubble-top"></div>
+                  <div class="message-content">
+                    <p>
+                      💩 I lost my 🚆 of 🤔
+                    </p>
+                    <p class="timestamp">14:27
+                      <span>
+                        <img src="https://static.fakewhats.com/images/iphone/check-read.png" alt="received">
+                      </span>
+                    </p>
+                  </div>
+                  <div class="bubble-bottom"></div>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <div id="messages-bottom">
+          <div id="type-message" class="empty-message">
+            Text Message
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom"></div>
+
+  </div>
+
+  <button>Start animation</button>
+  <script>
+    $("button").click(function () {
+      var numItems = $("li").size();
+      $("li").each(function (i) {
+        $(this).addClass("hide");
+      })
+      $("li").each(function (i) {
+        $(this).delay(1000 * (i + 1)).queue(function () {
+          $("#clock-result").text($(this).find(".timestamp").text());
+          $("#battery-percent-number").text(Math.round(26 - 0.3 * i));
+          if (i == numItems - 1) {
+            $("#type-message").text($(this).find(".message-content").find("p").first().text());
+            $("#type-message").removeClass("empty-message");
+            return;
+          }
+          $(this).removeClass("hide");
+          $(this).get(0).scrollIntoView(false);
+        })
+      })
+    });
+  </script>
+
+</body>
+
+</html>
