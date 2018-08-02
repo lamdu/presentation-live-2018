@@ -14,16 +14,50 @@ Many programmers love the REPL (aka Interactive Shell, Notebook, Playgrounds).
 
 It provides validation, useful feedback, it's very useful for learning to code, and in some cases it even produces the actual program results (obviating the need to build a full application).
 
-But the REPL often loses its efficacy when writing larger programs, to the point that many "serious" programming languages such Java, Rust, and C++ don't even bother offering one.
+But the REPL often loses its efficacy when writing larger programs, to the point that many "serious" programming languages such Go, Rust, and C++ don't even bother offering one. Until recently did Java and C# were also on that list.
 
 ### How the REPL loses efficacy for larger programs
 
-How exactly does the REPL become less effective for large programs?
+We identify three problems with scaling the REPL for large statically typed programs:
 
-We recognize two problems:
-
-* Availability
 * Bandwidth
+* Liveness
+* Availability
+
+#### Bandwidth
+
+(Showing in the background factorial with a bug in Python)
+
+The REPL only displays the final result of the computation.
+This doesn't provide much insight into the inner working of the code.
+
+When writing large programs, one would typically be editing their modules for longer periods between invoking the REPL,
+resulting in less feedback from the REPL the larger their programs are.
+
+This situation is like trying to understand a large mechanism with many moving parts
+by only looking at it through a tiny peep-hole.
+
+Display a peep-hole view of something.
+Programmers use tools like the debugger to move the peep-hole, but it is a klunky experience.
+Display the peep-hole moving.
+
+We're going to demonstrate how it looks like in Lamdu, but first, let's familiarize ourselves with its syntax.
+(explain syntax elements for the factorial function)
+
+Show the value annotations in factorial in Lamdu.
+
+Show the peep-hole again but reveal the full picture.
+
+#### Liveness
+
+The liveness problem is that there often is a discrepency between the edited code and the feedback from the REPL.
+The easy way to solve this discrepency is via live-reloading.
+But this may cause a new problem - Safety.
+We'll demonstrate this problem using Swift.
+
+The programmer fixes a compilation error, but due to a mind burp enters "!=" rather than "==".
+Swift automatically runs the code, which triggers a call to the "launchNukes" procedure,
+bringing upon the end of the world as we know it.
 
 #### Availability
 

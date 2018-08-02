@@ -1,0 +1,34 @@
+digraph {
+    ratio=0.5625
+    node [fillcolor="#dddddd" style=filled]
+
+    main [label="Scaling the REPL Experience"]
+
+    annotations [label="Subexpression\nAnnotations"]
+    live [label="Live\nReloading"]
+    Purity
+    projectional [label="Projectional\nEditing"]
+    blame [label="Type\nError\nLocality"]
+    WYTIWYS
+
+    node [shape=doubleoctagon fillcolor=red fontcolor=white]
+
+    Bandwidth
+    Liveness
+    Availability
+    Safety
+    UI
+
+    main -> Bandwidth
+    main -> Liveness
+    main -> Availability
+
+    Bandwidth -> annotations
+    Liveness -> live
+    live -> Safety
+    Safety -> Purity
+    Availability -> projectional
+    Availability -> blame
+    projectional -> UI
+    UI -> WYTIWYS
+}
