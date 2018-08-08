@@ -76,12 +76,6 @@ and you happen to want the check something in the repl for what you're currently
 * Computer: Module loaded successfully. Your wish is my command! What do you want to do now?
 * You: I forgot :/
 
-#### Bandwidth
-
-The other problem with REPLs is that the output size is not proportional to the size of your program.
-
-Programmers who wish to get a more in-depth understanding often use clunky debuggers and debug-prints to see more about how their programs work.
-
 ### The REPL in Lamdu
 
 Now let's see how it works in Lamdu:
@@ -150,3 +144,11 @@ Hazel, Unison, and others intend (or originally intended) to develop the same vi
 ### Specific essays / possible citations
 
 * Glen Chiacchieri's [Legible Mathematics](http://glench.com/LegibleMathematics/) describes our notation for intermediate value annotations. He arrived at this notation independently (at 2014 when we only had it for types, we added evaluation in 2015).
+
+## Todo
+
+(feedbacks from Eyal, Galya, etc)
+
+* Draw visual attention to wrong answer for factorial (Question mark and arrow)
+* "We also see in it in green where the cursor" => "the green hole inside tells us where we'll end up if we select this completion"
+* Record examples (Swift, Lamdu) with the bright themes. Remove mouse cursor where not used
