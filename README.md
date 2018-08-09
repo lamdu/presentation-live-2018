@@ -152,3 +152,4 @@ Hazel, Unison, and others intend (or originally intended) to develop the same vi
 * Draw visual attention to wrong answer for factorial (Question mark and arrow)
 * "We also see in it in green where the cursor" => "the green hole inside tells us where we'll end up if we select this completion"
 * Record examples (Swift, Lamdu) with the bright themes. Remove mouse cursor where not used
+* x*"Potato" in both Swift and Lamdu

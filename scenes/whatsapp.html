@@ -8,6 +8,7 @@
   <title>Based on fakewhats.com</title>
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Architects+Daughter|Open+Sans:400,300,600,700' rel='stylesheet'
     type='text/css'>
+  <link rel="stylesheet" href="https://marvelapp.github.io/devices.css/assets/devices.min.css" />
   <link rel="stylesheet" href="https://www.fakewhats.com/css/app.css" />
   <link rel="stylesheet" href="https://www.fakewhats.com/css/style.css" />
 
@@ -25,6 +26,12 @@
     .empty-message {
       color: #c8c8cd;
     }
+
+    #iphone #screen {
+      padding-left: 0;
+      padding-right: 0;
+      width: auto;
+    }
   </style>
 
 </head>
@@ -32,14 +39,22 @@
 <body style="background:red">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <p style="color:white">
-    This animation is based on the design from
+    This animation is based on the whatsapp mock design from
     <a href="http://fakewhats.com/">fakewhats.com</a>. As it has no options for creating and saving animations, I've edited their html to make this. Thanks
     you very much fakewhats.com!
+    The phone mock design is by <a href="http://marvelapp.github.io/devices.css/">marvelapp</a>
   </p>
+
   <div id="iphone">
-    <div class="top"></div>
-    <div class="middle">
-      <div id="screen">
+
+    <div class="marvel-device iphone8 gold">
+      <div class="top-bar"></div>
+      <div class="sleep"></div>
+      <div class="volume"></div>
+      <div class="camera"></div>
+      <div class="sensor"></div>
+      <div class="speaker"></div>
+      <div id="screen" class="screen">
         <section id="header">
 
           <div class="row">
@@ -63,8 +78,8 @@
               </div>
             </div>
 
-            <div id="battery-container" class="small-6 columns">
-              <div id="battery" class="right">
+            <div id="battery-container" class="small-4 columns">
+              <div id="battery" class="right" style="width:27px; height:7px">
                 <!-- Width needs to be larger than percent number because -->
                 <!-- It probably should look relative to outer frame? -->
                 <div id="battery-percent" style="width:31%;"></div>
@@ -99,7 +114,7 @@
 
         </section>
 
-        <section id="messages-container" style="height:560px; overflow-y:scroll;">
+        <section id="messages-container" style="height:530px; overflow-y:scroll;">
           <div class="row">
             <div class="small-16 columns">
               <ul id="messages-list">
@@ -271,9 +286,9 @@
           </div>
         </div>
       </div>
+      <div class="home"></div>
+      <div class="bottom-bar"></div>
     </div>
-
-    <div class="bottom"></div>
 
   </div>
 
