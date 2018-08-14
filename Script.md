@@ -8,7 +8,7 @@ large statically typed programs.
 Many programmers love the REPL!
 It provides validation, useful feedback,
 it's an excellent learning tool,
-and in some cases it even provides program output -
+and in some cases it even provides the program output -
 obviating the need to build a full application.
 
 But, many "real" programmers don't often use the REPL,
@@ -53,7 +53,7 @@ but it's not easy to see the full picture.
 Another mechanism people use is debug prints,
 which are also a clunky process.
 
-We want to show you how Lamdu solve's this problem.
+We want to show you how Lamdu solves this problem.
 Let's start by familiarizing ourselves with Lamdu's syntax.
 
 This is factorial implemented in Lamdu.
@@ -307,7 +307,7 @@ In Lamdu we try to not just demonstrate the ideas
 but to create an actual useful implementation that embodies them.
 We're not quite there yet but we're working on it.
 Lamdu is an open source project
-that I develop together with Eyal Lotem.
+that I am developing with Eyal Lotem.
 And if you want to help us, join us, or collaborate with us,
 you're most welcome!
 That all for now :)
